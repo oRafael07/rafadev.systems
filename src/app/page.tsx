@@ -42,7 +42,7 @@ export default function Home() {
         <div className="mt-20">
           <h1 className="text-center text-xl font-bold">Sobre mim</h1>
 
-          <div className="mt-10 flex flex-col">
+          <div className="mt-10 flex flex-col py-10 md:flex-row md:items-start md:gap-10 md:px-40">
             <Image
               src="/me.jpg"
               alt="Eu"
@@ -52,9 +52,9 @@ export default function Home() {
               style={{
                 objectFit: "contain",
               }}
-              className="mx-auto h-auto max-h-[40%] w-full max-w-[40%] rounded-full"
+              className="mx-auto h-auto max-h-[40%] w-full max-w-[40%] rounded-full md:max-h-[20%] md:max-w-[20%]"
             />
-            <p className="text-md px-4 py-8 text-center opacity-75">
+            <p className="text-md px-4 py-8 text-center opacity-75 md:px-0 md:text-left">
               Olá, meu nome é{" "}
               <span className=" font-bold text-green-500 opacity-100">
                 Rafael!
