@@ -7,7 +7,10 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "800"] });
 
 export const metadata: Metadata = {
   title: "Rafa DEV",
-  description: "my description",
+  description:
+    "Olá! Bem-vindo(a) ao meu site, me chamo Rafael, tenho 19 anos e sou Desenvolvedor de Software.",
+  keywords: ["Rafa DEV", "Software Developer", "Software Engineer"],
+  creator: "Rafael",
 };
 
 export default function RootLayout({
