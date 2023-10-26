@@ -23,8 +23,6 @@ export default function Header() {
             Menu
           </SheetHeader>
 
-          <Separator />
-
           <div className="mt-4 flex flex-col gap-2">
             <Button variant="outline" className="w-full justify-start gap-2">
               <HomeIcon size={16} />
@@ -35,6 +33,8 @@ export default function Header() {
               <User size={16} />
               Sobre mim
             </Button>
+
+            <Separator />
 
             <Button variant="outline" className="w-full justify-start gap-2">
               <ContactIcon size={16} />
