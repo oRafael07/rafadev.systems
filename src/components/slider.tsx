@@ -10,7 +10,7 @@ export default function Slider() {
       gradientColor="#000000"
       gradientWidth={200}
     >
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/postgres.svg"
           alt="Postgresql"
@@ -23,7 +23,7 @@ export default function Slider() {
           className="h-auto max-h-[40%] w-full max-w-[40%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/docker.svg"
           alt="Docker"
@@ -36,7 +36,7 @@ export default function Slider() {
           className="h-auto max-h-[60%] w-full max-w-[60%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/prisma.svg"
           alt="Prisma"
@@ -49,7 +49,7 @@ export default function Slider() {
           className="h-auto max-h-[50%] w-full max-w-[50%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/nodejs.svg"
           alt="NodeJS"
@@ -62,7 +62,7 @@ export default function Slider() {
           className="h-auto max-h-[30%] w-full max-w-[30%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/tailwindcss.svg"
           alt="tailwindcss"
@@ -75,7 +75,7 @@ export default function Slider() {
           className="h-auto max-h-[50%] w-full max-w-[50%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/react.svg"
           alt="React"
@@ -88,7 +88,7 @@ export default function Slider() {
           className="h-auto max-h-[20%] w-full max-w-[20%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/nextjs.svg"
           alt="NextJS"
@@ -101,7 +101,7 @@ export default function Slider() {
           className="h-auto max-h-[40%] w-full max-w-[40%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/jest.svg"
           alt="Jest"
@@ -114,7 +114,7 @@ export default function Slider() {
           className="h-auto max-h-[40%] w-full max-w-[40%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/github.svg"
           alt="GitHub"
@@ -127,7 +127,7 @@ export default function Slider() {
           className="h-auto max-h-[30%] w-full max-w-[30%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/nginx.svg"
           alt="Nginx"
@@ -140,7 +140,7 @@ export default function Slider() {
           className="h-auto max-h-[30%] w-full max-w-[30%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/ubuntu.svg"
           alt="Ubuntu"
@@ -153,7 +153,7 @@ export default function Slider() {
           className="h-auto max-h-[30%] w-full max-w-[30%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/typescript.svg"
           alt="Typescript"
@@ -166,7 +166,7 @@ export default function Slider() {
           className="h-auto max-h-[30%] w-full max-w-[30%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/cloudflare.svg"
           alt="Cloudflare"
@@ -179,10 +179,23 @@ export default function Slider() {
           className="h-auto max-h-[50%] w-full max-w-[50%]"
         />
       </div>
-      <div className="w-[200px]">
+      <div className="w-[50%] md:w-[200px]">
         <Image
           src="/skills/digitalocean.svg"
-          alt="Cloudflare"
+          alt="Digital Ocean"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            objectFit: "contain",
+          }}
+          className="h-auto max-h-[70%] w-full max-w-[70%]"
+        />
+      </div>
+      <div className="w-[50%] md:w-[200px]">
+        <Image
+          src="/skills/datadog.svg"
+          alt="Datadog"
           width={0}
           height={0}
           sizes="100vw"
