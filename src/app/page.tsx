@@ -1,6 +1,7 @@
 import Slider from "@/components/slider";
 import { Button } from "@/components/ui/button";
-import { CodeIcon, PhoneIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { CodeIcon, Github, Linkedin, Mail, PhoneIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -40,41 +41,61 @@ export default function Home() {
       </section>
 
       <section id="about-me">
-        <div className="mt-20">
-          <h1 className="text-center text-xl font-bold">Sobre mim</h1>
+        {/* <h1 className="mb-10 text-center text-xl font-bold">Sobre mim</h1> */}
 
-          <div className="mt-4 flex flex-col gap-10 py-10 md:flex-row md:items-start md:justify-between md:gap-10 md:px-40">
-            <Image
-              src="/me.jpg"
-              alt="Eu"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{
-                objectFit: "contain",
-              }}
-              className="mx-auto h-auto max-h-[40%] w-full max-w-[40%] rounded-full md:max-h-[20%] md:max-w-[20%]"
-            />
-            <div className="px-10 md:px-0">
-              <h1 className="text-center text-2xl font-light md:text-left">
-                Olá, eu sou{" "}
-                <span className="font-bold text-green-500">Rafael</span>
-              </h1>
-              <p className="mt-4 text-sm text-zinc-400">
-                Trabalho com desenvolvimento de Software a 4 anos, construindo
-                soluções escaláveis e facilidade para negócio usando o melhor da
-                tecnologia.
-              </p>
-              <div className="flex justify-center md:justify-start">
-                <Button
-                  variant="outline"
-                  className="mt-4 justify-start gap-2 hover:bg-green-500"
-                >
-                  <CodeIcon size={16} />
-                  Soft skills
-                </Button>
-              </div>
+        <div className="my-20 flex flex-col justify-center gap-10 md:flex-row md:items-center md:gap-6 md:px-40 md:py-20">
+          <Image
+            src="/me.jpg"
+            alt="Eu"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{
+              objectFit: "contain",
+            }}
+            className="mx-auto h-auto max-h-[35%] w-full max-w-[35%] rounded-full md:mx-0 md:max-h-[15%] md:max-w-[15%] lg:max-h-[20%] lg:max-w-[20%]"
+          />
+          <div className="flex w-auto flex-col px-10 md:px-0">
+            <h1 className="text-center text-3xl font-light md:text-left">
+              Olá, eu sou{" "}
+              <span className="font-bold text-green-500">Rafael</span>
+            </h1>
+            <p className="py-4 text-center text-sm text-zinc-400 md:text-left">
+              Desenvolvedor de Software
+            </p>
+
+            <Separator className="my-2" />
+            <div className="mx-auto mt-3 flex h-5 items-center space-x-2 text-sm md:mx-0">
+              <Button
+                variant="outline"
+                className="p-2 text-zinc-400 hover:bg-green-500"
+                size="icon"
+              >
+                <Linkedin />
+              </Button>
+              <Separator orientation="vertical" />
+              <Button
+                variant="outline"
+                className="p-2 text-zinc-400 hover:bg-green-500"
+                size="icon"
+              >
+                <Github />
+              </Button>
+              <Separator orientation="vertical" />
+              <Button
+                variant="outline"
+                className="p-2 text-zinc-400 hover:bg-green-500"
+                size="icon"
+              >
+                <Mail />
+              </Button>
             </div>
+
+            <p className="mx-auto mt-10 px-10 text-center text-sm text-zinc-400 md:max-w-md md:px-0 md:text-left">
+              Trabalho com desenvolvimento de Software a 4 anos, construindo
+              soluções escaláveis e facilidade para negócio usando o melhor da
+              tecnologia.
+            </p>
           </div>
         </div>
       </section>
@@ -86,7 +107,7 @@ export default function Home() {
             Veja um pouco das minhas experiências
           </p>
 
-          <div className="my-20">
+          <div className="mb-20 mt-10">
             <Slider />
           </div>
         </div>
