@@ -150,6 +150,13 @@ const imagesSrc: ImagesSrc[] = [
     description: "Linguagem de Programação",
     category: "linguagem",
   },
+  {
+    url: "/skills/python.svg",
+    alt: "Python",
+    style: "md:max-h-[30%] md:max-w-[30%] max-h-[10%] max-w-[10%]",
+    description: "Linguagem de Programação",
+    category: "linguagem",
+  },
 ];
 
 export default function Slider() {

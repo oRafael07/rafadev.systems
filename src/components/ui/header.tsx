@@ -3,6 +3,7 @@ import { Button } from "./button";
 import { Card } from "./card";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
 import { Separator } from "./separator";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -24,21 +25,39 @@ export default function Header() {
           </SheetHeader>
 
           <div className="mt-4 flex flex-col gap-2">
-            <Button variant="outline" className="w-full justify-start gap-2">
-              <HomeIcon size={16} />
-              Início
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              asChild
+            >
+              <Link href="/">
+                <HomeIcon size={16} />
+                Início
+              </Link>
             </Button>
 
-            <Button variant="outline" className="w-full justify-start gap-2">
-              <User size={16} />
-              Sobre mim
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              asChild
+            >
+              <Link href="#about-me">
+                <User size={16} />
+                Sobre mim
+              </Link>
             </Button>
 
             <Separator />
 
-            <Button variant="outline" className="w-full justify-start gap-2">
-              <ContactIcon size={16} />
-              Contato
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              asChild
+            >
+              <Link href="#about-me">
+                <ContactIcon size={16} />
+                Contato
+              </Link>
             </Button>
           </div>
         </SheetContent>
@@ -48,22 +67,24 @@ export default function Header() {
         <Button
           variant="link"
           className="w-full justify-start gap-2 text-white"
+          asChild
         >
-          Início
+          <Link href="/">Início</Link>
+        </Button>
+        <Separator orientation="vertical" />
+        <Button
+          variant="link"
+          className="w-full justify-start gap-2 text-white"
+          asChild
+        >
+          <Link href="#about-me">Sobre mim</Link>
         </Button>
         <Separator orientation="vertical" />
         <Button
           variant="link"
           className="w-full justify-start gap-2 text-white"
         >
-          Sobre mim
-        </Button>
-        <Separator orientation="vertical" />
-        <Button
-          variant="link"
-          className="w-full justify-start gap-2 text-white"
-        >
-          Contato
+          <Link href="#about-me">Contato</Link>
         </Button>
       </div>
     </Card>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CodeIcon, Github, Linkedin, Mail, PhoneIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
       <section id="about-me">
         {/* <h1 className="mb-10 text-center text-xl font-bold">Sobre mim</h1> */}
 
-        <div className="my-20 flex flex-col justify-center gap-10 md:flex-row md:items-center md:gap-6 md:px-40 md:py-20">
+        <div className="my-20 flex flex-col justify-center gap-10 md:flex-row md:items-center md:px-40 md:py-20">
           <Image
             src="/me.jpg"
             alt="Eu"
@@ -70,16 +71,25 @@ export default function Home() {
                 variant="outline"
                 className="p-2 text-zinc-400 hover:bg-green-500"
                 size="icon"
+                asChild
               >
-                <Linkedin />
+                <Link
+                  href="https://www.linkedin.com/in/rafael-rocha-b6b745205/"
+                  target="_blank"
+                >
+                  <Linkedin />
+                </Link>
               </Button>
               <Separator orientation="vertical" />
               <Button
                 variant="outline"
                 className="p-2 text-zinc-400 hover:bg-green-500"
                 size="icon"
+                asChild
               >
-                <Github />
+                <Link href="https://github.com/oRafael07" target="_blank">
+                  <Github />
+                </Link>
               </Button>
               <Separator orientation="vertical" />
               <Button
@@ -112,6 +122,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="flex w-full flex-col items-center justify-between gap-4 p-10 py-5 md:flex-row md:gap-0">
+        <div className="flex flex-col gap-2">
+          <p className="text-center text-sm text-zinc-400">
+            Made by Rafael with 💜
+          </p>
+          <p className="text-center text-xs text-zinc-400 md:text-left">
+            Copyright © {new Date().getFullYear()}
+          </p>
+        </div>
+        <p className="text-xs text-zinc-400">CNPJ: 47.430.875/0001-97</p>
+      </footer>
     </>
   );
 }

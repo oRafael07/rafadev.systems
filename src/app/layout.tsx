@@ -9,7 +9,21 @@ export const metadata: Metadata = {
   title: "Rafa DEV",
   description:
     "Olá! Bem-vindo(a) ao meu site, me chamo Rafael, tenho 19 anos e sou Desenvolvedor de Software.",
-  keywords: ["Rafa DEV", "Software Developer", "Software Engineer"],
+  keywords: [
+    "Rafa DEV",
+    "Software Developer",
+    "Software Engineer",
+    "Backend Developer",
+    "Frontend Developer",
+    "backend Specialist",
+    "Manaus Developer",
+    "Amazonas Developer",
+    "Desenvolvedor em Manaus",
+    "Criador de site em Manaus",
+    "Desenvolvedor React Manaus ui/ux",
+    "Desenvolvedor Javascript Manaus",
+    "Desenvolvedor NodeJS",
+  ],
   creator: "Rafael",
   openGraph: {
     images: [
