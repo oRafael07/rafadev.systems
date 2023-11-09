@@ -19,9 +19,15 @@ export default function Home() {
               <Button
                 variant="outline"
                 className="mt-4 justify-start gap-2 hover:bg-green-500"
+                asChild
               >
-                <PhoneIcon size={16} />
-                Fale Comigo
+                <Link
+                  href="https://api.whatsapp.com/send/?phone=5592994904403&text=Ol%C3%A1%2C+gostaria+saber+mais+sobre+seus+servi%C3%A7os.&type=phone_number&app_absent=0"
+                  target="_blank"
+                >
+                  <PhoneIcon size={16} />
+                  Fale Comigo
+                </Link>
               </Button>
             </div>
           </div>
@@ -96,8 +102,14 @@ export default function Home() {
                 variant="outline"
                 className="p-2 text-zinc-400 hover:bg-green-500"
                 size="icon"
+                asChild
               >
-                <Mail />
+                <Link
+                  href="mailto:rafadeveloper.contato@gmail.com"
+                  target="_blank"
+                >
+                  <Mail />
+                </Link>
               </Button>
             </div>
 

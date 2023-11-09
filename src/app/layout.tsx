@@ -25,13 +25,6 @@ export const metadata: Metadata = {
     "Desenvolvedor NodeJS",
   ],
   creator: "Rafael",
-  openGraph: {
-    images: [
-      "http://stage.clickip.com.br:7465/uploads/2af810d279a6937f1984c3fe9bb6e47b-e6TzZ9.jpg",
-    ],
-  },
-  icons:
-    "http://stage.clickip.com.br:7465/uploads/2af810d279a6937f1984c3fe9bb6e47b-e6TzZ9.jpg",
   colorScheme: "dark",
   themeColor: "#22c55e",
   applicationName: "Rafa DEV",
