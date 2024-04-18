@@ -45,6 +45,7 @@ export default function RootLayout({
         <Analytics />
       </body>
       <Script
+        async
         src="https://analytics.rafadev.systems/tracker.js"
         data-ackee-server="https://analytics.rafadev.systems"
         data-ackee-domain-id="f7714b79-2833-4a2b-9c76-9ac38251b282"
