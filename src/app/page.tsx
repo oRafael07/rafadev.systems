@@ -22,7 +22,7 @@ export default function Home() {
                 asChild
               >
                 <Link
-                  href="https://api.whatsapp.com/send/?phone=5592994904403&text=Ol%C3%A1%2C+gostaria+saber+mais+sobre+seus+servi%C3%A7os.&type=phone_number&app_absent=0"
+                  href="https://api.whatsapp.com/send/?phone=5592991334023&text=Ol%C3%A1%2C+gostaria+saber+mais+sobre+seus+servi%C3%A7os.&type=phone_number&app_absent=0"
                   target="_blank"
                 >
                   <PhoneIcon size={16} />
