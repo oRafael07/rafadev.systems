@@ -22,7 +22,7 @@ export default function Home() {
                 asChild
               >
                 <Link
-                  href="https://api.whatsapp.com/send/?phone=5592991334023&text=Ol%C3%A1%2C+gostaria+saber+mais+sobre+seus+servi%C3%A7os.&type=phone_number&app_absent=0"
+                  href="https://api.whatsapp.com/send/?phone=5592993647866&text=Ol%C3%A1%2C+gostaria+saber+mais+sobre+seus+servi%C3%A7os.&type=phone_number&app_absent=0"
                   target="_blank"
                 >
                   <PhoneIcon size={16} />
@@ -144,7 +144,7 @@ export default function Home() {
             Copyright © {new Date().getFullYear()}
           </p>
         </div>
-        <p className="text-xs text-zinc-400">CNPJ: 47.430.875/0001-97</p>
+        <p className="text-xs text-zinc-400">CNPJ: 59.715.257/0001-72</p>
       </footer>
     </>
   );
