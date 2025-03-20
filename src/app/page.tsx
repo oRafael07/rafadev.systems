@@ -114,7 +114,7 @@ export default function Home() {
             </div>
 
             <p className="mx-auto mt-10 px-10 text-center text-sm text-zinc-400 md:max-w-md md:px-0 md:text-left">
-              Trabalho com desenvolvimento de Software a 4 anos, construindo
+              Trabalho com desenvolvimento de Software a 6 anos, construindo
               soluções escaláveis e facilidade para negócio usando o melhor da
               tecnologia.
             </p>
