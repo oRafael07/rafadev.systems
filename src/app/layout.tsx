@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/ui/header";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "800"] });
 
@@ -44,12 +45,7 @@ export default function RootLayout({
         {children}
         <Analytics />
       </body>
-      <Script
-        async
-        src="https://analytics.rafadev.systems/tracker.js"
-        data-ackee-server="https://analytics.rafadev.systems"
-        data-ackee-domain-id="f7714b79-2833-4a2b-9c76-9ac38251b282"
-      />
+      <GoogleAnalytics gaId="G-62DR7EGS5B" />
     </html>
   );
 }
