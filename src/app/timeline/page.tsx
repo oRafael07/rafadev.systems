@@ -40,18 +40,37 @@ const timeline: TimelineItem[] = [
 
 export default function TimelinePage() {
   return (
-    <main className="mx-auto max-w-3xl p-10 md:p-20">
-      <h1 className="mb-10 text-center text-3xl font-bold">Minha Jornada</h1>
-      <div className="relative border-l border-zinc-700 pl-6">
-        {timeline.map((item) => (
-          <div key={item.year} className="mb-10 ml-4">
-            <div className="absolute -left-2.5 h-2 w-2 rounded-full bg-green-500" />
-            <h3 className="text-lg font-semibold">
-              {item.year} - {item.title}
-            </h3>
-            <p className="mt-2 text-sm text-zinc-400">{item.description}</p>
-          </div>
-        ))}
+    <main className="mx-auto max-w-5xl p-10 md:p-20">
+      <h1 className="mb-16 text-center text-3xl font-bold md:text-4xl">
+        Minha Jornada
+      </h1>
+
+      <div className="relative">
+        <div className="absolute left-1/2 top-0 -ml-px h-full w-px bg-zinc-700" />
+
+        <div className="space-y-16">
+          {timeline.map((item, index) => (
+            <div
+              key={item.year}
+              className={`relative flex flex-col md:flex-row ${
+                index % 2 === 0
+                  ? "md:items-start md:pr-[calc(50%+1rem)]"
+                  : "md:flex-row-reverse md:pl-[calc(50%+1rem)]"
+              }`}
+            >
+              <span className="absolute left-1/2 top-2 -ml-2 h-4 w-4 rounded-full bg-green-500" />
+
+              <div className="w-full md:w-1/2">
+                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6 shadow-lg transition-all hover:-translate-y-1 hover:border-zinc-600">
+                  <h3 className="text-lg font-semibold">
+                    {item.year} – {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-zinc-400">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
