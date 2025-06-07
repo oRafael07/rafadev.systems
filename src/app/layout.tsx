@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const poppins = Poppins({
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
@@ -60,7 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={poppins.className}>
+      <body className={montserrat.className}>
         <Header />
         {children}
         <Analytics />
