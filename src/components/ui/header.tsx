@@ -36,6 +36,7 @@ export default function Header() {
               </Link>
             </Button>
 
+
             <Button
               variant="outline"
               className="w-full justify-start gap-2"
@@ -45,6 +46,14 @@ export default function Header() {
                 <User size={16} />
                 Sobre mim
               </Link>
+            </Button>
+
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              asChild
+            >
+              <Link href="/timeline">Jornada</Link>
             </Button>
 
             <Separator />
@@ -78,6 +87,10 @@ export default function Header() {
           asChild
         >
           <Link href="#about-me">Sobre mim</Link>
+        </Button>
+        <Separator orientation="vertical" />
+        <Button variant="link" className="w-full justify-start gap-2 text-white" asChild>
+          <Link href="/timeline">Jornada</Link>
         </Button>
         <Separator orientation="vertical" />
         <Button
