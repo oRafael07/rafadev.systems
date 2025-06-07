@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "800"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Rafa DEV",
@@ -41,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script
           strategy="beforeInteractive"
           id="clarity-tracking"
@@ -55,7 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={poppins.className}>
+      <body className={montserrat.className}>
         <Header />
         {children}
         <Analytics />

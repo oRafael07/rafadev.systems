@@ -11,7 +11,7 @@ export default function Home() {
       <section id="heading">
         <main className="flex flex-col items-center justify-between px-10 md:flex-row md:px-20 lg:px-40">
           <div>
-            <h1 className="text-center text-6xl font-bold leading-tight md:mt-10 md:text-left md:leading-normal">
+            <h1 className="text-center text-5xl leading-tight font-bold md:mt-10 md:text-left md:text-6xl md:leading-normal">
               Tire sua ideia do <br />
               <span className="text-green-500 line-through">Papel</span>
             </h1>
@@ -41,7 +41,7 @@ export default function Home() {
               style={{
                 objectFit: "contain",
               }}
-              className="h-auto max-h-[100%] w-full max-w-[100%] "
+              className="h-auto max-h-[100%] w-full max-w-[100%]"
             />
           </div>
         </main>
@@ -63,11 +63,11 @@ export default function Home() {
             className="mx-auto h-auto max-h-[35%] w-full max-w-[35%] rounded-full md:mx-0 md:max-h-[15%] md:max-w-[15%] lg:max-h-[20%] lg:max-w-[20%]"
           />
           <div className="flex w-auto flex-col px-10 md:px-0">
-            <h1 className="text-center text-3xl font-light md:text-left">
+            <h1 className="text-center text-2xl font-light md:text-left md:text-3xl">
               Olá, eu sou{" "}
               <span className="font-bold text-green-500">Rafael</span>
             </h1>
-            <p className="py-4 text-center text-sm text-zinc-400 md:text-left">
+            <p className="py-4 text-center text-base text-zinc-400 md:text-left">
               Desenvolvedor de Software
             </p>
 
@@ -124,18 +124,20 @@ export default function Home() {
 
       <section id="soft-skills">
         <div className="mt-6">
-          <h1 className="text-center text-xl font-bold">Soft skills</h1>
-          <p className="mt-2 text-center text-sm text-zinc-400">
+          <h1 className="text-center text-xl font-bold md:text-2xl">
+            Soft skills
+          </h1>
+          <p className="mt-2 text-center text-base text-zinc-400">
             Veja um pouco das minhas experiências
           </p>
 
-          <div className="mb-20 mt-10">
+          <div className="mt-10 mb-20">
             <Slider />
           </div>
         </div>
       </section>
 
-      <footer className="flex w-full flex-col items-center justify-between gap-4 p-10 py-5 md:flex-row md:gap-0">
+      <footer className="flex w-full flex-col items-center justify-between gap-4 p-10 py-5 text-sm md:flex-row md:gap-0">
         <div className="flex flex-col gap-2">
           <p className="text-center text-sm text-zinc-400">
             Made by Rafael with 💜
