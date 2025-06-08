@@ -1,4 +1,10 @@
-import { ContactIcon, HomeIcon, MenuIcon, User } from "lucide-react";
+import {
+  ContactIcon,
+  HomeIcon,
+  MenuIcon,
+  User,
+  ChartNoAxesGantt,
+} from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
@@ -41,9 +47,20 @@ export default function Header() {
               className="w-full justify-start gap-2"
               asChild
             >
-              <Link href="#about-me">
+              <Link href="/#about-me">
                 <User size={16} />
                 Sobre mim
+              </Link>
+            </Button>
+
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              asChild
+            >
+              <Link href="/timeline">
+                <ChartNoAxesGantt size={16} />
+                Jornada
               </Link>
             </Button>
 
@@ -54,7 +71,7 @@ export default function Header() {
               className="w-full justify-start gap-2"
               asChild
             >
-              <Link href="#about-me">
+              <Link href="/#about-me">
                 <ContactIcon size={16} />
                 Contato
               </Link>
@@ -77,14 +94,22 @@ export default function Header() {
           className="w-full justify-start gap-2 text-white"
           asChild
         >
-          <Link href="#about-me">Sobre mim</Link>
+          <Link href="/#about-me">Sobre mim</Link>
+        </Button>
+        <Separator orientation="vertical" />
+        <Button
+          variant="link"
+          className="w-full justify-start gap-2 text-white"
+          asChild
+        >
+          <Link href="/timeline">Jornada</Link>
         </Button>
         <Separator orientation="vertical" />
         <Button
           variant="link"
           className="w-full justify-start gap-2 text-white"
         >
-          <Link href="#about-me">Contato</Link>
+          <Link href="/#about-me">Contato</Link>
         </Button>
       </div>
     </Card>
