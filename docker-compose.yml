@@ -6,9 +6,19 @@ services:
     pull_policy: build
     build: .
     image: rafadev-site
-    ports:
-      - "${APP_PORT}:3000"
     environment:
       NODE_ENV: production
       PORT: 3000
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rafadev.rule=Host(`rafadev.solutions`) || Host(`www.rafadev.solutions`)"
+      - "traefik.http.routers.rafadev.entrypoints=websecure"
+      - "traefik.http.routers.rafadev.tls=true"
+      - "traefik.http.services.rafadev.loadbalancer.server.port=3000"
     restart: unless-stopped
+
+networks:
+  traefik:
+    external: true
