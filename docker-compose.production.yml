@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  app:
+    image: rafadev-site:latest
+    deploy:
+      mode: global
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik"
+        - "traefik.http.routers.rafadev-web.tls=true"
+        - "traefik.http.routers.rafadev-web.rule=Host(`rafadev.solutions`)"
+        - "traefik.http.routers.rafadev-web.entrypoints=websecure"
+        - "traefik.http.services.rafadev-web.loadbalancer.server.port=3000"
+    networks:
+      - traefik-swarm
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    restart: unless-stopped
+
+networks:
+  traefik-swarm:
+    external: true

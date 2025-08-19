@@ -11,7 +11,7 @@ export default function Home() {
       <section id="heading">
         <main className="flex flex-col items-center justify-between px-10 md:flex-row md:px-20 lg:px-40">
           <div>
-            <h1 className="text-center text-5xl leading-tight font-bold md:mt-10 md:text-left md:text-6xl md:leading-normal">
+            <h1 className="text-center text-5xl font-bold leading-tight md:mt-10 md:text-left md:text-6xl md:leading-normal">
               Tire sua ideia do <br />
               <span className="text-green-500 line-through">Papel</span>
             </h1>
@@ -131,7 +131,7 @@ export default function Home() {
             Veja um pouco das minhas experiências
           </p>
 
-          <div className="mt-10 mb-20">
+          <div className="mb-20 mt-10">
             <Slider />
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
       <footer className="flex w-full flex-col items-center justify-between gap-4 p-10 py-5 text-sm md:flex-row md:gap-0">
         <div className="flex flex-col gap-2">
           <p className="text-center text-sm text-zinc-400">
-            Made by Rafael with 💜
+            Made by Rafael with ☕
           </p>
           <p className="text-center text-xs text-zinc-400 md:text-left">
             Copyright © {new Date().getFullYear()}
