@@ -146,7 +146,15 @@ export default function Home() {
             Copyright © {new Date().getFullYear()}
           </p>
         </div>
-        <p className="text-xs text-zinc-400">CNPJ: 59.715.257/0001-72</p>
+        <div className="flex flex-col items-center gap-2 md:items-end">
+          <p className="text-xs text-zinc-400">CNPJ: 59.715.257/0001-72</p>
+          <Link
+            href="/privacy"
+            className="text-xs text-zinc-400 hover:text-green-500 transition-colors"
+          >
+            Política de Privacidade
+          </Link>
+        </div>
       </footer>
     </>
   );
