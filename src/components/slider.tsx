@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { useAptabase } from '@aptabase/react';
 import {
   Tooltip,
   TooltipContent,
@@ -160,6 +161,7 @@ const imagesSrc: ImagesSrc[] = [
 ];
 
 export default function Slider() {
+  const { trackEvent } = useAptabase();
   const [state, set] = useState<StateImage>({
     initialState: imagesSrc,
     filtered: [],
@@ -168,6 +170,7 @@ export default function Slider() {
   function onHandleChangeSelect(
     value: "todos" | "frontend" | "backend" | "devops" | "linguagem",
   ) {
+    trackEvent('slider_change', { value });
     if (value === "todos") {
       set((prev) => ({
         filtered: prev.initialState,

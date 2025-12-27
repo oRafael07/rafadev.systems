@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
-import { Analytics } from "@vercel/analytics/react";
+import { AptabaseProvider } from '@aptabase/react';
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -62,8 +62,7 @@ export default function RootLayout({
       </head>
       <body className={montserrat.className}>
         <Header />
-        {children}
-        <Analytics />
+        <AptabaseProvider appKey="A-SH-3143280001" options={{ host: 'https://analytics.rafadev.solutions' }}>{children}</AptabaseProvider>
       </body>
       <GoogleAnalytics gaId="G-62DR7EGS5B" />
     </html>
