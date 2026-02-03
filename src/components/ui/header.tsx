@@ -1,105 +1,119 @@
-import { ContactIcon, HomeIcon, MenuIcon, User } from "lucide-react";
+import { ContactIcon, HomeIcon, MenuIcon, User, Briefcase, Wrench } from "lucide-react";
 import { Button } from "./button";
-import { Card } from "./card";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
-import { Separator } from "./separator";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from "./sheet";
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <Card className="flex items-center justify-between bg-transparent p-[1.875rem] md:border-none md:p-10">
-      <h1 className="text-2xl font-bold text-white">
-        Rafa <span className="text-green-500">DEV</span>
-      </h1>
+    <header className="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12 lg:px-20">
+        <Link href="/" className="group flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-white transition-colors">
+            Rafa <span className="text-green-500 transition-colors group-hover:text-green-400">DEV</span>
+          </h1>
+        </Link>
 
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button size="icon" variant="outline" className="md:hidden">
-            <MenuIcon />
-          </Button>
-        </SheetTrigger>
-
-        <SheetContent>
-          <SheetHeader className="mb-4 text-left text-lg font-semibold">
-            Menu
-          </SheetHeader>
-
-          <div className="mt-4 flex flex-col gap-2">
-            <Button
-              variant="outline"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <Link href="/">
-                <HomeIcon size={16} />
-                Início
-              </Link>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="ghost" className="md:hidden">
+              <MenuIcon className="h-5 w-5" />
             </Button>
+          </SheetTrigger>
 
+          <SheetContent className="border-zinc-800 bg-zinc-950">
+            <SheetHeader className="mb-8 flex flex-row items-center justify-between">
+              <span className="text-lg font-semibold">Menu</span>
+            </SheetHeader>
 
-            <Button
-              variant="outline"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <Link href="#about-me">
-                <User size={16} />
-                Sobre mim
-              </Link>
-            </Button>
+            <nav className="flex flex-col gap-2">
+              <SheetClose asChild>
+                <Link
+                  href="/"
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                >
+                  <HomeIcon className="h-5 w-5" />
+                  <span>Início</span>
+                </Link>
+              </SheetClose>
 
-            <Button
-              variant="outline"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <Link href="/timeline">Jornada</Link>
-            </Button>
+              <SheetClose asChild>
+                <Link
+                  href="/sobre"
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                >
+                  <User className="h-5 w-5" />
+                  <span>Sobre</span>
+                </Link>
+              </SheetClose>
 
-            <Separator />
+              <SheetClose asChild>
+                <Link
+                  href="/projetos"
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                >
+                  <Briefcase className="h-5 w-5" />
+                  <span>Projetos</span>
+                </Link>
+              </SheetClose>
 
-            <Button
-              variant="outline"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <Link href="#about-me">
-                <ContactIcon size={16} />
-                Contato
-              </Link>
-            </Button>
-          </div>
-        </SheetContent>
-      </Sheet>
+              <SheetClose asChild>
+                <Link
+                  href="/servicos"
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                >
+                  <Wrench className="h-5 w-5" />
+                  <span>Serviços</span>
+                </Link>
+              </SheetClose>
 
-      <div className="hidden h-5 items-center text-sm md:flex">
-        <Button
-          variant="link"
-          className="w-full justify-start gap-2 text-white"
-          asChild
-        >
-          <Link href="/">Início</Link>
-        </Button>
-        <Separator orientation="vertical" />
-        <Button
-          variant="link"
-          className="w-full justify-start gap-2 text-white"
-          asChild
-        >
-          <Link href="#about-me">Sobre mim</Link>
-        </Button>
-        <Separator orientation="vertical" />
-        <Button variant="link" className="w-full justify-start gap-2 text-white" asChild>
-          <Link href="/timeline">Jornada</Link>
-        </Button>
-        <Separator orientation="vertical" />
-        <Button
-          variant="link"
-          className="w-full justify-start gap-2 text-white"
-        >
-          <Link href="#about-me">Contato</Link>
-        </Button>
+              <div className="my-4 h-px bg-zinc-800" />
+
+              <SheetClose asChild>
+                <Link
+                  href="/contato"
+                  className="flex items-center gap-3 rounded-lg bg-green-500/10 px-4 py-3 text-green-500 transition-colors hover:bg-green-500/20"
+                >
+                  <ContactIcon className="h-5 w-5" />
+                  <span className="font-medium">Contato</span>
+                </Link>
+              </SheetClose>
+            </nav>
+          </SheetContent>
+        </Sheet>
+
+        <nav className="hidden items-center gap-1 md:flex">
+          <Link
+            href="/"
+            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+          >
+            Início
+          </Link>
+          <Link
+            href="/sobre"
+            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+          >
+            Sobre
+          </Link>
+          <Link
+            href="/projetos"
+            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+          >
+            Projetos
+          </Link>
+          <Link
+            href="/servicos"
+            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+          >
+            Serviços
+          </Link>
+          <Link
+            href="/contato"
+            className="ml-2 rounded-lg bg-green-500/10 px-4 py-2 text-sm font-medium text-green-500 transition-colors hover:bg-green-500/20"
+          >
+            Contato
+          </Link>
+        </nav>
       </div>
-    </Card>
+    </header>
   );
 }
