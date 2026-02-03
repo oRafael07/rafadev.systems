@@ -26,7 +26,7 @@ export default function ServicosPage() {
           <h2 className="mb-8 text-center text-2xl font-bold">O que eu ofereço</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+              <ServiceCard key={service.id} title={service.title} description={service.description} features={service.features} icon={service.icon as string} />
             ))}
           </div>
         </div>
