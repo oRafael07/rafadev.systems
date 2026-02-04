@@ -1,12 +1,6 @@
 import { Code, Plug, Wrench, Lightbulb } from "lucide-react";
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  features: string[];
-  icon: React.ReactNode;
-}
+import { Service } from "@/types/services";
 
 export const services: Service[] = [
   {

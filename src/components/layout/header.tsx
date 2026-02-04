@@ -1,6 +1,6 @@
 import { ContactIcon, HomeIcon, MenuIcon, User, Briefcase, Wrench } from "lucide-react";
-import { Button } from "./button";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from "./sheet";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import Link from "next/link";
 
 export default function Header() {

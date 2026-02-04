@@ -1,4 +1,5 @@
-import ProjectCard from "@/components/sections/project-card";
+import { Project } from "@/types/projects";
+import ProjectCard from "@/components/shared/project-card";
 import { projects } from "@/content/projects";
 import { Metadata } from "next";
 

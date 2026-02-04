@@ -1,4 +1,5 @@
-import ServiceCard from "@/components/sections/service-card";
+import { Service } from "@/types/services";
+import ServiceCard from "@/components/shared/service-card";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { services, servicePackages } from "@/content/services";

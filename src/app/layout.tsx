@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/ui/header";
+import Header from "@/components/layout/header";
 import { AptabaseProvider } from '@aptabase/react';
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -32,9 +32,12 @@ export const metadata: Metadata = {
     "Desenvolvedor NodeJS",
   ],
   creator: "Rafael",
+  applicationName: "Rafa DEV",
+};
+
+export const viewport: Viewport = {
   colorScheme: "dark",
   themeColor: "#22c55e",
-  applicationName: "Rafa DEV",
 };
 
 export default function RootLayout({
@@ -47,7 +50,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           id="clarity-tracking"
           dangerouslySetInnerHTML={{
             __html: `
