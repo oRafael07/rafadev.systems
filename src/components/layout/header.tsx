@@ -1,9 +1,14 @@
+"use client";
+
 import { ContactIcon, HomeIcon, MenuIcon, User, Briefcase, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
+  const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12 lg:px-20">
@@ -29,7 +34,10 @@ export default function Header() {
               <SheetClose asChild>
                 <Link
                   href="/"
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+                    { "bg-green-500/10 text-green-500": pathname === "/" },
+                  )}
                 >
                   <HomeIcon className="h-5 w-5" />
                   <span>Início</span>
@@ -39,7 +47,10 @@ export default function Header() {
               <SheetClose asChild>
                 <Link
                   href="/sobre"
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+                    { "bg-green-500/10 text-green-500": pathname === "/sobre" },
+                  )}
                 >
                   <User className="h-5 w-5" />
                   <span>Sobre</span>
@@ -49,7 +60,10 @@ export default function Header() {
               <SheetClose asChild>
                 <Link
                   href="/projetos"
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+                    { "bg-green-500/10 text-green-500": pathname === "/projetos" },
+                  )}
                 >
                   <Briefcase className="h-5 w-5" />
                   <span>Projetos</span>
@@ -59,7 +73,10 @@ export default function Header() {
               <SheetClose asChild>
                 <Link
                   href="/servicos"
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-4 py-3 text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+                    { "bg-green-500/10 text-green-500": pathname === "/servicos" },
+                  )}
                 >
                   <Wrench className="h-5 w-5" />
                   <span>Serviços</span>
@@ -84,25 +101,37 @@ export default function Header() {
         <nav className="hidden items-center gap-1 md:flex">
           <Link
             href="/"
-            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+            className={cn(
+              "rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+              { "bg-green-500/10 text-green-500": pathname === "/" },
+            )}
           >
             Início
           </Link>
           <Link
             href="/sobre"
-            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+            className={cn(
+              "rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+              { "bg-green-500/10 text-green-500": pathname === "/sobre" },
+            )}
           >
             Sobre
           </Link>
           <Link
             href="/projetos"
-            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+            className={cn(
+              "rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+              { "bg-green-500/10 text-green-500": pathname === "/projetos" },
+            )}
           >
             Projetos
           </Link>
           <Link
             href="/servicos"
-            className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+            className={cn(
+              "rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white",
+              { "bg-green-500/10 text-green-500": pathname === "/servicos" },
+            )}
           >
             Serviços
           </Link>

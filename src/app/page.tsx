@@ -28,10 +28,10 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 py-32 md:px-12 md:py-40 lg:px-20">
+      <section id="hero-section" className="relative overflow-hidden px-6 py-32 md:px-12 md:py-40 lg:px-20">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-          <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[500px] w-[500px] rounded-full bg-green-500 opacity-10 blur-[100px]" />
+          <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[500px] w-[500px] rounded-full bg-green-500 opacity-5 blur-[80px]" />
         </div>
 
         <div className="mx-auto max-w-7xl">
@@ -40,18 +40,18 @@ export default function Home() {
               mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-4 py-1.5 text-sm font-medium text-green-500 backdrop-blur-sm">
-              <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm">
+              <div className="h-2 w-2 animate-pulse rounded-full bg-primary" />
               Disponível para novos projetos
             </div>
 
             <h1 className="mb-6 max-w-5xl text-5xl font-bold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
               Transformo ideias em{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                <span className="relative z-10 bg-gradient-to-r from-primary/80 via-primary to-primary/80 bg-clip-text text-transparent">
                   produtos digitais
                 </span>
-                <span className="absolute -bottom-2 left-0 h-3 w-full bg-green-500/20 blur-xl" />
+                <span className="absolute -bottom-2 left-0 h-3 w-full bg-primary/20 blur-xl" />
               </span>{" "}
               que geram resultados
             </h1>
@@ -61,12 +61,11 @@ export default function Home() {
             </p>
 
             <div className="mb-16 flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="group h-12 gap-2 bg-green-500 px-8 text-base font-semibold hover:bg-green-600"
-                asChild
-              >
-                <Link
+                              <Button
+                                size="lg"
+                                className="group h-12 gap-2 bg-primary px-8 text-base font-semibold hover:bg-primary/90"
+                                asChild
+                              >                <Link
                   href="https://api.whatsapp.com/send/?phone=5592993647866&text=Ol%C3%A1%2C+gostaria+de+discutir+um+projeto.&type=phone_number&app_absent=0"
                   target="_blank"
                 >
@@ -78,7 +77,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 gap-2 border-zinc-700 px-8 text-base font-semibold hover:border-zinc-600 hover:bg-zinc-900"
+                className="h-12 gap-2 border-border px-8 text-base font-semibold hover:border-foreground/20 hover:bg-accent"
                 asChild
               >
                 <Link href="/projetos">
@@ -97,9 +96,9 @@ export default function Home() {
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-zinc-900"
+                  className="group rounded-2xl border border-border bg-card p-6 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/70"
                 >
-                  <div className="mb-2 text-3xl font-bold text-green-500">{stat.value}</div>
+                  <div className="mb-2 text-3xl font-bold text-primary">{stat.value}</div>
                   <div className="text-sm text-zinc-400">{stat.label}</div>
                 </div>
               ))}
@@ -112,7 +111,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 text-sm text-zinc-400">
-              <Zap className="h-4 w-4 text-green-500" />
+              <Zap className="h-4 w-4 text-primary" />
               Serviços
             </div>
             <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
@@ -127,11 +126,11 @@ export default function Home() {
             {services.map((service, index) => (
               <Card
                 key={service.id}
-                className="group relative overflow-hidden border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-green-500/50 hover:bg-zinc-900"
+                className="group relative overflow-hidden border-border bg-card p-6 transition-all hover:border-primary/50 hover:bg-card/70"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="relative">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 transition-all group-hover:scale-110 group-hover:bg-green-500/20">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all group-hover:scale-110 group-hover:bg-primary/20">
                     {service.icon}
                   </div>
                   <h3 className="mb-2 text-lg font-bold">{service.title}</h3>
@@ -144,7 +143,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <Button
               variant="outline"
-              className="group gap-2 border-zinc-700 hover:border-green-500/50 hover:bg-zinc-900"
+              className="group gap-2 border-border hover:border-primary/50 hover:bg-accent"
               asChild
             >
               <Link href="/servicos">
@@ -160,7 +159,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 text-sm text-zinc-400">
-              <Star className="h-4 w-4 text-green-500" />
+              <Star className="h-4 w-4 text-primary" />
               Portfólio
             </div>
             <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
