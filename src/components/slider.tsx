@@ -3,12 +3,6 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { useAptabase } from '@aptabase/react';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
 import { useState } from "react";
 import {
   Select,

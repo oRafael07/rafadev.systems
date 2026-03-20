@@ -1,7 +1,7 @@
 import Slider from "@/components/slider";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { CodeIcon, Github, Linkedin, Mail, PhoneIcon } from "lucide-react";
+import { Github, Linkedin, Mail, PhoneIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
