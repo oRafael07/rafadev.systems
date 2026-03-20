@@ -63,7 +63,7 @@ export default function Header() {
               className="w-full justify-start gap-2"
               asChild
             >
-              <Link href="#about-me">
+              <Link href="/contact">
                 <ContactIcon size={16} />
                 Contato
               </Link>
@@ -97,7 +97,7 @@ export default function Header() {
           variant="link"
           className="w-full justify-start gap-2 text-white"
         >
-          <Link href="#about-me">Contato</Link>
+          <Link href="/contact">Contato</Link>
         </Button>
       </div>
     </Card>
