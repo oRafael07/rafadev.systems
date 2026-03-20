@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   applicationName: "Rafa DEV",
 };
 
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: "#22c55e",
   colorScheme: "dark",
 };
