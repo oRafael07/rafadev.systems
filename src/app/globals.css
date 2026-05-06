@@ -40,7 +40,121 @@
   * {
     @apply border-border;
   }
+  html,
   body {
-    @apply h-full bg-background text-foreground;
+    background: #0a0a0a;
+    color: #fff;
+  }
+  body {
+    @apply h-full;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+  ::selection {
+    background: #22c55e;
+    color: #052e16;
+  }
+}
+
+@layer utilities {
+  .font-body {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+  .font-display {
+    font-family: var(--font-display), sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .font-hero {
+    font-family: var(--font-hero), sans-serif;
+    letter-spacing: -0.03em;
+  }
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+
+  .strike-papel {
+    position: relative;
+    color: #22c55e;
+    display: inline-block;
+  }
+  .strike-papel::after {
+    content: "";
+    position: absolute;
+    left: -3%;
+    right: -3%;
+    top: 54%;
+    height: 0.085em;
+    background: #22c55e;
+    transform: rotate(-4deg);
+    border-radius: 2px;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .neutral-bg {
+    background:
+      radial-gradient(50% 40% at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
+      radial-gradient(40% 40% at 100% 30%, rgba(255, 255, 255, 0.025), transparent 70%);
+  }
+
+  .glass {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .blink {
+    animation: blink 1s steps(2, end) infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .float-soft {
+    animation: floaty 7s ease-in-out infinite;
+  }
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  .avatar-rr {
+    background: linear-gradient(135deg, #1f2937, #0a0a0a);
+    color: #e4e4e7;
+  }
+
+  .filter-btn {
+    transition: all 0.2s ease;
+  }
+  .filter-btn[data-active="true"] {
+    background: #22c55e;
+    color: #052e16;
+    border-color: #22c55e;
+  }
+
+  .skill-card {
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .skill-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(161, 161, 170, 0.45);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blink,
+    .float-soft,
+    .skill-card {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }

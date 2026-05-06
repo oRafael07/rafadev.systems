@@ -1,15 +1,37 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter, Montserrat, Roboto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { AptabaseProvider } from '@aptabase/react';
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-body",
+});
+
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["600", "700", "800"],
   display: "swap",
+  variable: "--font-display",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-hero",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -46,11 +68,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${montserrat.variable} ${roboto.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           id="clarity-tracking"
           dangerouslySetInnerHTML={{
             __html: `
@@ -63,7 +88,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={montserrat.className}>
+      <body className="antialiased font-body">
         <Header />
         <AptabaseProvider appKey="A-SH-3143280001" options={{ host: 'https://analytics.rafadev.solutions' }}>{children}</AptabaseProvider>
       </body>

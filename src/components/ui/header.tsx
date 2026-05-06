@@ -1,69 +1,58 @@
-"use client"
-
-import { ContactIcon, HomeIcon, MenuIcon, User, Clock } from "lucide-react";
-import { Button } from "./button";
-import { Card } from "./card";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
-import { Separator } from "./separator";
 import Link from "next/link";
+
+const NAV_LINKS = [
+  { href: "/#about", label: "about.md" },
+  { href: "/#skills", label: "stacks.json" },
+  { href: "/#journey", label: "timeline.log" },
+];
 
 export default function Header() {
   return (
-    <Card className="flex items-center justify-between bg-transparent p-4 md:border-none md:p-10">
-      <h1 className="text-xl font-bold text-white md:text-2xl">
-        Rafa <span className="text-green-500">DEV</span>
-      </h1>
+    <header className="border-b border-zinc-900 bg-[#070707] sticky top-0 z-40 backdrop-blur">
+      <div className="max-w-7xl mx-auto px-4 h-10 flex items-center gap-4 text-xs text-zinc-500 font-mono">
+        <div aria-hidden="true" className="flex gap-1.5">
+          <span className="w-3 h-3 rounded-full bg-zinc-800" />
+          <span className="w-3 h-3 rounded-full bg-zinc-800" />
+          <span className="w-3 h-3 rounded-full bg-zinc-800" />
+        </div>
+        <Link href="/" className="text-zinc-600 hover:text-zinc-300">
+          ~/rafadev
+        </Link>
+        <span aria-hidden="true" className="text-zinc-700">›</span>
+        <span className="text-zinc-300">portfolio.tsx</span>
 
-      <div className="flex items-center gap-4 md:hidden">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline" className="border-zinc-700 bg-transparent text-white hover:bg-zinc-800">
-              <MenuIcon />
-            </Button>
-          </SheetTrigger>
+        <nav aria-label="Navegação principal" className="ml-auto hidden md:flex gap-5">
+          {NAV_LINKS.map((l) => (
+            <Link key={l.href} href={l.href} className="hover:text-white">
+              {l.label}
+            </Link>
+          ))}
+        </nav>
 
-          <SheetContent side="right" className="bg-zinc-900 border-zinc-800">
-            <SheetHeader className="mb-4 text-left text-lg font-semibold text-white">
-              Menu
-            </SheetHeader>
-
-            <div className="mt-4 flex flex-col gap-2">
-              <Link href="/" className="flex items-center gap-2 text-zinc-300 hover:text-green-500">
-                <HomeIcon size={16} />
-                Início
+        <details className="ml-auto md:hidden relative group">
+          <summary
+            aria-label="Abrir menu"
+            className="list-none cursor-pointer flex items-center gap-1.5 px-2 py-1 rounded border border-zinc-800 text-zinc-300 hover:border-zinc-600 [&::-webkit-details-marker]:hidden"
+          >
+            <span aria-hidden="true">≡</span>
+            <span>menu</span>
+          </summary>
+          <nav
+            aria-label="Navegação principal"
+            className="absolute right-0 top-full mt-2 min-w-[180px] rounded border border-zinc-800 bg-[#070707] shadow-lg p-2 flex flex-col"
+          >
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="px-3 py-2 rounded hover:bg-zinc-900 hover:text-white"
+              >
+                {l.label}
               </Link>
-              <Separator className="bg-zinc-800" />
-
-              <Link href="#about-me" className="flex items-center gap-2 text-zinc-300 hover:text-green-500">
-                <User size={16} />
-                Sobre mim
-              </Link>
-              <Separator className="bg-zinc-800" />
-
-              <Link href="/timeline" className="flex items-center gap-2 text-zinc-300 hover:text-green-500">
-                <Clock size={16} />
-                Jornada
-              </Link>
-              <Separator className="bg-zinc-800" />
-
-              <Link href="/contact" className="flex items-center gap-2 text-zinc-300 hover:text-green-500">
-                <ContactIcon size={16} />
-                Contato
-              </Link>
-            </div>
-          </SheetContent>
-        </Sheet>
+            ))}
+          </nav>
+        </details>
       </div>
-
-      <nav className="hidden items-center gap-2 text-sm md:flex">
-        <Link href="/" className="text-white hover:text-green-500">Início</Link>
-        <Separator orientation="vertical" className="h-4 bg-zinc-700" />
-        <Link href="#about-me" className="text-white hover:text-green-500">Sobre mim</Link>
-        <Separator orientation="vertical" className="h-4 bg-zinc-700" />
-        <Link href="/timeline" className="text-white hover:text-green-500">Jornada</Link>
-        <Separator orientation="vertical" className="h-4 bg-zinc-700" />
-        <Link href="/contact" className="text-white hover:text-green-500">Contato</Link>
-      </nav>
-    </Card>
+    </header>
   );
 }
