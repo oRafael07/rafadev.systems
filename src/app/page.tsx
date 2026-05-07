@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Skills, SkillsFilters, SkillsList } from "./_components/skills-grid";
 
@@ -104,10 +105,15 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-4">
-              <div className="aspect-[4/5] rounded-lg overflow-hidden border border-zinc-800">
-                <div className="w-full h-full avatar-rr flex items-center justify-center font-display font-bold text-8xl tracking-tighter">
-                  RR
-                </div>
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-zinc-800">
+                <Image
+                  src="/me.jpg"
+                  alt="Rafael Rocha"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
               </div>
               <div className="mt-5 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500 mb-3">
                 Encontre-me em
