@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MobileNav from "./mobile-nav";
 
 const NAV_LINKS = [
   { href: "/#about", label: "about.md" },
@@ -29,29 +30,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <details className="ml-auto md:hidden relative group">
-          <summary
-            aria-label="Abrir menu"
-            className="list-none cursor-pointer flex items-center gap-1.5 px-2 py-1 rounded border border-zinc-800 text-zinc-300 hover:border-zinc-600 [&::-webkit-details-marker]:hidden"
-          >
-            <span aria-hidden="true">≡</span>
-            <span>menu</span>
-          </summary>
-          <nav
-            aria-label="Navegação principal"
-            className="absolute right-0 top-full mt-2 min-w-[180px] rounded border border-zinc-800 bg-[#070707] shadow-lg p-2 flex flex-col"
-          >
-            {NAV_LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="px-3 py-2 rounded hover:bg-zinc-900 hover:text-white"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </details>
+        <MobileNav links={NAV_LINKS} />
       </div>
     </header>
   );

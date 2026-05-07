@@ -149,10 +149,91 @@
     border-color: rgba(161, 161, 170, 0.45);
   }
 
+  .prose-privacy p + p {
+    margin-top: 0.85rem;
+  }
+  .prose-privacy ul {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .prose-privacy ul li {
+    position: relative;
+    padding-left: 1.4rem;
+  }
+  .prose-privacy ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #71717a;
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+
+  .intro-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transition: opacity 200ms ease;
+  }
+  .intro-loader[data-phase="out"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .intro-loader__bg {
+    position: absolute;
+    inset: 0;
+    background: #0a0a0a;
+    background-image:
+      radial-gradient(60% 50% at 50% 50%, rgba(34, 197, 94, 0.05), transparent 70%),
+      radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: auto, 22px 22px;
+  }
+  .intro-loader__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro-loader__write {
+    display: inline-flex;
+    font-family: var(--font-hero), Roboto, sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 8vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #fafafa;
+  }
+  .intro-loader__ch {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.18em) rotate(-3deg);
+    transform-origin: 50% 90%;
+    filter: blur(4px);
+    animation: intro-ch-in 180ms cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
+    white-space: pre;
+  }
+  .intro-loader__ch[data-accent="true"] {
+    color: #22c55e;
+  }
+  @keyframes intro-ch-in {
+    to {
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+      filter: blur(0);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .blink,
     .float-soft,
-    .skill-card {
+    .skill-card,
+    .intro-loader,
+    .intro-loader__ch {
       animation: none !important;
       transition: none !important;
     }

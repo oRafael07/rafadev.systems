@@ -254,7 +254,8 @@ export default function Home() {
                 const lvl = t.current ? "INFO" : "LOG ";
                 return (
                   <div key={`${t.year}-${t.title}`} className="px-4 py-4 hover:bg-[#0a0a0a] transition">
-                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[12px] font-mono">
+                    {/* Desktop: single inline meta row */}
+                    <div className="hidden md:flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[12px] font-mono">
                       <span className="text-zinc-600">{String(i + 1).padStart(2, "0")}</span>
                       <span className="text-zinc-500">[{lvl}]</span>
                       <span className="text-green-500 font-semibold">{t.year}</span>
@@ -268,7 +269,30 @@ export default function Home() {
                         </span>
                       ) : null}
                     </div>
-                    <div className="mt-2 pl-7 text-[13px] text-zinc-400 leading-relaxed border-l border-zinc-900">
+
+                    {/* Mobile: stacked layout */}
+                    <div className="md:hidden">
+                      <div className="flex items-center gap-x-3 text-[12px] font-mono">
+                        <span className="text-zinc-600">{String(i + 1).padStart(2, "0")}</span>
+                        <span className="text-zinc-500">[{lvl}]</span>
+                        <span className="text-green-500 font-semibold">{t.year}</span>
+                        {t.current ? (
+                          <span className="ml-auto text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-green-500 text-green-950 font-bold">
+                            Atual
+                          </span>
+                        ) : null}
+                      </div>
+                      <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                        <span className="text-zinc-200 font-display font-semibold text-[14px]">
+                          {t.title}
+                        </span>
+                        {t.company ? (
+                          <span className="font-mono text-[12px] text-zinc-500">@ {t.company}</span>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div className="mt-2 md:pl-7 pl-3 text-[13px] text-zinc-400 leading-relaxed border-l border-zinc-900">
                       <span className="text-zinc-600 font-mono">›</span> {t.desc}
                     </div>
                   </div>
